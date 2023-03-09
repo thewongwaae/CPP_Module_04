@@ -3,10 +3,12 @@
 #define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Cat : public Animal {
+class Cat : public Animal, public Brain {
 	private:
-		
+		Brain *_brain;
+	
 	public:
 		Cat( void );
 		Cat( const Cat &copy );

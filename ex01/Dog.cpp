@@ -2,6 +2,12 @@
 
 Dog::Dog( void ) : Animal() {
 	_type = "Dog";
+	_brain = new Brain();
+	if (!_brain)
+	{
+		perror("Cat brain creation unsucessful");
+		exit(1);
+	}
 }
 
 Dog::Dog( const Dog &copy ) : Animal(copy) {
