@@ -5,7 +5,7 @@ Dog::Dog( void ) : Animal() {
 	_brain = new Brain();
 	if (!_brain)
 	{
-		perror("Cat brain creation unsucessful");
+		perror("Dog brain creation unsucessful");
 		exit(1);
 	}
 }
@@ -23,4 +23,16 @@ Dog &Dog::operator=( const Dog &assign ) {
 
 void Dog::makeSound( void ) const {
 	std::cout << this->getType() << ": woof woof" << std::endl;
+}
+
+void Dog::getIdeas( int i ) const {
+	for (int i = 0; i < 100; i++) {
+		std::string idea = _brain->getIdea(i);
+		if (!idea.empty())
+			std::cout << "[" << i << "]" << " " << idea << std::endl;
+	}
+}
+
+void Dog::setIdea( int i, std::string idea ) {
+	this->_brain->setIdea(i, idea);
 }

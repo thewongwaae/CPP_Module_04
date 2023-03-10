@@ -5,7 +5,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal, public Brain {
+class Cat : public Animal {
 	private:
 		Brain *_brain;
 	
@@ -15,7 +15,9 @@ class Cat : public Animal, public Brain {
 		~Cat( void );
 		Cat	&operator=( const Cat &assign );
 
-		void makeSound( void ) const;
+		void	makeSound( void ) const;
+		void	getIdeas( int i ) const;
+		void	setIdea( int i, std::string idea );
 };
 
 #endif
