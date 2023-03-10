@@ -3,8 +3,8 @@ CPP		= c++ -fsanitize=address -fno-omit-frame-pointer
 FLAGS	= -Wall -Wextra -Werror -I -std=c++98
 RM		= rm -rf
 
-SRC		= AAnimal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAAnimal.cpp main.cpp
-INC		= AAnimal.hpp Cat.cpp Dog.cpp WrongCat.cpp WrongAAnimal.cpp
+SRC		= Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp main.cpp
+INC		= Animal.hpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
 
 OBJ		= $(SRC:%.cpp=%.o)
 

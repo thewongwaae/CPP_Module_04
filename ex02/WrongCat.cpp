@@ -1,10 +1,10 @@
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat( void ) : WrongAAnimal() {
+WrongCat::WrongCat( void ) : WrongAnimal() {
 	_type = "WrongCat";
 }
 
-WrongCat::WrongCat( const WrongCat &copy ) : WrongAAnimal(copy) {
+WrongCat::WrongCat( const WrongCat &copy ) : WrongAnimal(copy) {
 	*this = copy;
 }
 

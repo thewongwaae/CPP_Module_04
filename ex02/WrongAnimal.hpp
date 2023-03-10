@@ -1,18 +1,18 @@
 #pragma once
-#ifndef WRONGAAnimal_HPP
-#define WRONGAAnimal_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <iostream>
 
-class WrongAAnimal {
+class WrongAnimal {
 	protected:
 		std::string _type;
 
 	public:
-		WrongAAnimal();
-		WrongAAnimal( const WrongAAnimal &copy );
-		virtual ~WrongAAnimal();
-		WrongAAnimal &operator=( const WrongAAnimal &assign );
+		WrongAnimal();
+		WrongAnimal( const WrongAnimal &copy );
+		virtual ~WrongAnimal();
+		WrongAnimal &operator=( const WrongAnimal &assign );
 
 		virtual void	makeSound( void ) const;
 		std::string		getType( void ) const;

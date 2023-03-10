@@ -1,22 +1,22 @@
-#include "WrongAAnimal.hpp"
+#include "WrongAnimal.hpp"
 
-WrongAAnimal::WrongAAnimal( void ) : _type("wrong_dunno") {}
+WrongAnimal::WrongAnimal( void ) : _type("wrong_dunno") {}
 
-WrongAAnimal::WrongAAnimal( const WrongAAnimal &copy ) {
+WrongAnimal::WrongAnimal( const WrongAnimal &copy ) {
 	*this = copy;
 }
 
-WrongAAnimal::~WrongAAnimal( void ) {}
+WrongAnimal::~WrongAnimal( void ) {}
 
-WrongAAnimal &WrongAAnimal::operator=( const WrongAAnimal &assign ) {
+WrongAnimal &WrongAnimal::operator=( const WrongAnimal &assign ) {
 	this->_type = assign._type;
 	return (*this);
 }
 
-void WrongAAnimal::makeSound( void ) const {
-	std::cout << "I dunno what sound this WrongAAnimal makes" << std::endl;
+void WrongAnimal::makeSound( void ) const {
+	std::cout << "I dunno what sound this WrongAnimal makes" << std::endl;
 }
 
-std::string WrongAAnimal::getType( void ) const {
+std::string WrongAnimal::getType( void ) const {
 	return (this->_type);
 }

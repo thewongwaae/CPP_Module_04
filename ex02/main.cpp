@@ -1,7 +1,7 @@
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAAnimal.hpp"
+#include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
 int main()
@@ -53,7 +53,7 @@ int main()
 
 	std::cout << std::endl;
 	std::cout << "\033[34mConstructing\033[0m" << std::endl;
-	const WrongAAnimal	*wrong_meta = new WrongAAnimal();
+	const WrongAnimal	*wrong_meta = new WrongAnimal();
 	std::cout << std::endl;
 
 	std::cout << "\033[34mTesting\033[0m" << std::endl;
@@ -68,7 +68,7 @@ int main()
 	std::cout << "-------------------------------------------------------" << std::endl;
 
 	std::cout << "\033[34mConstructing\033[0m" << std::endl;
-	const WrongAAnimal	*wrong_catto = new WrongCat();
+	const WrongAnimal	*wrong_catto = new WrongCat();
 	std::cout << std::endl;
 
 	std::cout << "\033[34mTesting\033[0m" << std::endl;
