@@ -1,16 +1,22 @@
 #include "Animal.hpp"
 
-Animal::Animal( void ) : _type("dunno") {}
+Animal::Animal( void ) : _type("dunno") {
+	std::cout << "Animal constructor" << std::endl;
+}
 
 Animal::Animal( const Animal &copy ) {
 	*this = copy;
+	std::cout << "Animal copy" << std::endl;
 }
 
-Animal::~Animal( void ) {}
+Animal::~Animal( void ) {
+	std::cout << "Animnal deconstruct" << std::endl;
+}
 
 Animal &Animal::operator=( const Animal &assign ) {
 	if (this != &assign)
 		this->_type = assign._type;
+	std::cout << "Animal assign" << std::endl;
 	return (*this);
 }
 

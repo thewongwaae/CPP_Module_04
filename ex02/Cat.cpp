@@ -8,13 +8,17 @@ Cat::Cat( void ) : Animal() {
 		perror("Cat brain creation unsucessful");
 		exit(1);
 	}
+	std::cout << "Cat constructor" << std::endl;
 }
 
 Cat::Cat( const Cat &copy ) : Animal(copy) {
 	*this = copy;
+	std::cout << "Cat copy" << std::endl;
 }
 
-Cat::~Cat() {}
+Cat::~Cat( void ) {
+	std::cout << "Cat deconstructor" << std::endl;
+}
 
 Cat &Cat::operator=( const Cat &assign ) {
 	if (this != &assign) {
@@ -26,6 +30,7 @@ Cat &Cat::operator=( const Cat &assign ) {
 		}
 		*this->_brain = *assign._brain;
 	}
+	std::cout << "Cat assign" << std::endl;
 	return *this;
 }
 

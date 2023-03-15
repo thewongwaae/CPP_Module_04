@@ -1,12 +1,17 @@
 #include "Brain.hpp"
 
-Brain::Brain( void ) {}
+Brain::Brain( void ) {
+	std::cout << "Brain constructor" << std::endl;
+}
 
 Brain::Brain( const Brain &copy ) {
 	*this = copy;
+	std::cout << "Brain copy" << std::endl;
 }
 
-Brain::~Brain() {}
+Brain::~Brain() {
+	std::cout << "Brain deconstruct" << std::endl;
+}
 
 Brain &Brain::operator=( const Brain &assign ) {
 	if (this != &assign) {
@@ -15,6 +20,7 @@ Brain &Brain::operator=( const Brain &assign ) {
 				this->_ideas[i].assign(assign._ideas[i]);
 		}
 	}
+	std::cout << "Brain assign" << std::endl;
 	return *this;
 }
 
