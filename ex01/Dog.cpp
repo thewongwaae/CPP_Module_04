@@ -8,16 +8,21 @@ Dog::Dog( void ) : Animal() {
 		perror("Dog brain creation unsucessful");
 		exit(1);
 	}
+	std::cout << "Dog construct" << std::endl;
 }
 
 Dog::Dog( const Dog &copy ) : Animal(copy) {
 	*this = copy;
+	std::cout << "Dog copy" << std::endl;
 }
 
-Dog::~Dog() {}
+Dog::~Dog() {
+	std::cout << "Dog deconstruct" << std::endl;
+}
 
 Dog &Dog::operator=( const Dog &assign ) {
 	this->_type = assign._type;
+	std::cout << "Dog assign" << std::endl;
 	return *this;
 }
 
