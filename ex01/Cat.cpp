@@ -25,7 +25,7 @@ void Cat::makeSound( void ) const {
 	std::cout << this->getType() << ": meeoowww" << std::endl;
 }
 
-void Cat::getIdeas( int i ) const {
+void Cat::getIdeas( void ) const {
 	for (int i = 0; i < 100; i++) {
 		std::string idea = _brain->getIdea(i);
 		if (!idea.empty())

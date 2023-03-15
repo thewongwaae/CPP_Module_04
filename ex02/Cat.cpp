@@ -1,6 +1,6 @@
 #include "Cat.hpp"
 
-Cat::Cat( void ) : AAnimal() {
+Cat::Cat( void ) : Animal() {
 	_type = "Cat";
 	_brain = new Brain();
 	if (!_brain)
@@ -10,14 +10,22 @@ Cat::Cat( void ) : AAnimal() {
 	}
 }
 
-Cat::Cat( const Cat &copy ) : AAnimal(copy) {
+Cat::Cat( const Cat &copy ) : Animal(copy) {
 	*this = copy;
 }
 
 Cat::~Cat() {}
 
 Cat &Cat::operator=( const Cat &assign ) {
-	this->_type = assign._type;
+	if (this != &assign) {
+		this->_type = assign._type;
+		this->_brain = new Brain();
+		if (!this->_brain) {
+			perror("Cat Brain allocation failed");
+			exit(1);
+		}
+		*this->_brain = *assign._brain;
+	}
 	return *this;
 }
 
@@ -25,7 +33,7 @@ void Cat::makeSound( void ) const {
 	std::cout << this->getType() << ": meeoowww" << std::endl;
 }
 
-void Cat::getIdeas( int i ) const {
+void Cat::getIdeas( void ) const {
 	for (int i = 0; i < 100; i++) {
 		std::string idea = _brain->getIdea(i);
 		if (!idea.empty())

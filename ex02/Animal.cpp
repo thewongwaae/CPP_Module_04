@@ -1,22 +1,23 @@
 #include "Animal.hpp"
 
-AAnimal::AAnimal( void ) : _type("dunno") {}
+Animal::Animal( void ) : _type("dunno") {}
 
-AAnimal::AAnimal( const AAnimal &copy ) {
+Animal::Animal( const Animal &copy ) {
 	*this = copy;
 }
 
-AAnimal::~AAnimal( void ) {}
+Animal::~Animal( void ) {}
 
-AAnimal &AAnimal::operator=( const AAnimal &assign ) {
-	this->_type = assign._type;
+Animal &Animal::operator=( const Animal &assign ) {
+	if (this != &assign)
+		this->_type = assign._type;
 	return (*this);
 }
 
-// void AAnimal::makeSound( void ) const {
-// 	std::cout << "I dunno what sound this AAnimal makes" << std::endl;
+// void Animal::makeSound( void ) const {
+// 	std::cout << "I dunno what sound this Animal makes" << std::endl;
 // }
 
-std::string AAnimal::getType( void ) const {
+std::string Animal::getType( void ) const {
 	return (this->_type);
 }

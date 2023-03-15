@@ -25,7 +25,7 @@ void Dog::makeSound( void ) const {
 	std::cout << this->getType() << ": woof woof" << std::endl;
 }
 
-void Dog::getIdeas( int i ) const {
+void Dog::getIdeas( void ) const {
 	for (int i = 0; i < 100; i++) {
 		std::string idea = _brain->getIdea(i);
 		if (!idea.empty())

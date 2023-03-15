@@ -20,7 +20,7 @@ int main()
 		if (i % 2)
 		{
 			meta[i] = new Cat();
-			if (meta[i] == NULL)
+			if (!meta[i])
 			{
 				perror("Cat allocation failed");
 				std::cerr << "Exiting process now";
@@ -30,7 +30,7 @@ int main()
 		else
 		{
 			meta[i] = new Dog();
-			if (meta[i] == NULL)
+			if (!meta[i])
 			{
 				perror("Dog allocation failed");
 				std::cerr << "Exiting process now";

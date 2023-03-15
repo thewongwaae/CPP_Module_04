@@ -9,9 +9,11 @@ Brain::Brain( const Brain &copy ) {
 Brain::~Brain() {}
 
 Brain &Brain::operator=( const Brain &assign ) {
-	for (int i = 0; i < 100; i++) {
-		if (assign._ideas[i].length() > 0)
-			this->_ideas[i].assign(assign._ideas[i]);
+	if (this != &assign) {
+		for (int i = 0; i < 100; i++) {
+			if (assign._ideas[i].length() > 0)
+				this->_ideas[i].assign(assign._ideas[i]);
+		}
 	}
 	return *this;
 }
