@@ -1,16 +1,22 @@
 #include "Animal.hpp"
 
-Animal::Animal( void ) : _type("dunno") {}
+Animal::Animal( void ) : _type("dunno") {
+	std::cout << "Animal constructor" << std::endl;
+}
 
 Animal::Animal( const Animal &copy ) {
 	*this = copy;
+	std::cout << "Animal copy constructor" << std::endl;
 }
 
-Animal::~Animal( void ) {}
+Animal::~Animal( void ) {
+	std::cout << "Animal deconstructor" << std::endl;
+}
 
 Animal &Animal::operator=( const Animal &assign ) {
 	this->_type = assign._type;
-	return (*this);
+	std::cout << "Animal assign" << std::endl;
+	return *this;
 }
 
 void Animal::makeSound( void ) const {
@@ -18,5 +24,5 @@ void Animal::makeSound( void ) const {
 }
 
 std::string Animal::getType( void ) const {
-	return (this->_type);
+	return _type;
 }
