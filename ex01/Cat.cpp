@@ -21,7 +21,16 @@ Cat::~Cat() {
 }
 
 Cat &Cat::operator=( const Cat &assign ) {
+	if (this == &assign)
+		return *this;
 	this->_type = assign._type;
+	this->_brain = new Brain();
+	if (!this->_brain)
+	{
+		perror("Cat Brain allocation failed");
+		exit(1);
+	}
+	*this->_brain = *assign._brain;
 	std::cout << "Cat assign" << std::endl;
 	return *this;
 }

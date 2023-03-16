@@ -14,7 +14,8 @@ WrongAnimal::~WrongAnimal( void ) {
 }
 
 WrongAnimal &WrongAnimal::operator=( const WrongAnimal &assign ) {
-	this->_type = assign._type;
+	if (this != &assign)
+		this->_type = assign._type;
 	std::cout << "WrongAnimal assign" << std::endl;
 	return (*this);
 }

@@ -9,11 +9,13 @@ Brain::Brain( const Brain &copy ) {
 	std::cout << "Brain copy" << std::endl;
 }
 
-Brain::~Brain() {
+Brain::~Brain( void ) {
 	std::cout << "Brain deconstruct" << std::endl;
 }
 
 Brain &Brain::operator=( const Brain &assign ) {
+	if (this == &assign)
+		return *this;
 	for (int i = 0; i < 100; i++) {
 		if (assign._ideas[i].length() > 0)
 			this->_ideas[i].assign(assign._ideas[i]);

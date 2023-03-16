@@ -21,7 +21,16 @@ Dog::~Dog() {
 }
 
 Dog &Dog::operator=( const Dog &assign ) {
+	if (this == &assign)
+		return *this;
 	this->_type = assign._type;
+	this->_brain = new Brain();
+	if (!_brain)
+	{
+		perror("Dog brain creation unsucessful");
+		exit(1);
+	}
+	*this->_brain = *assign._brain;
 	std::cout << "Dog assign" << std::endl;
 	return *this;
 }
