@@ -17,6 +17,7 @@ Cat::Cat( const Cat &copy ) : Animal(copy) {
 }
 
 Cat::~Cat() {
+	delete(this->_brain);
 	std::cout << "Cat deconstruct" << std::endl;
 }
 
