@@ -17,6 +17,7 @@ Dog::Dog( const Dog &copy ) : Animal(copy) {
 }
 
 Dog::~Dog( void ) {
+	delete(this->_brain);
 	std::cout << "Dog deconstruct" << std::endl;
 }
 

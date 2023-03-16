@@ -15,7 +15,8 @@ WrongCat::~WrongCat() {
 }
 
 WrongCat &WrongCat::operator=( const WrongCat &assign ) {
-	this->_type = assign._type;
+	if (this != &assign)
+		this->_type = assign._type;
 	std::cout << "WrongCat assign" << std::endl;
 	return *this;
 }

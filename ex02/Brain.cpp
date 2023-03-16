@@ -14,11 +14,11 @@ Brain::~Brain() {
 }
 
 Brain &Brain::operator=( const Brain &assign ) {
-	if (this != &assign) {
-		for (int i = 0; i < 100; i++) {
-			if (assign._ideas[i].length() > 0)
-				this->_ideas[i].assign(assign._ideas[i]);
-		}
+	if (this == &assign)
+		return *this;
+	for (int i = 0; i < 100; i++) {
+		if (assign._ideas[i].length() > 0)
+			this->_ideas[i].assign(assign._ideas[i]);
 	}
 	std::cout << "Brain assign" << std::endl;
 	return *this;
