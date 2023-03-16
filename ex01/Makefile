@@ -1,5 +1,5 @@
 NAME	= Animals
-CPP		= c++ -fsanitize=address -fno-omit-frame-pointer
+CPP		= c++ #-fsanitize=address -fno-omit-frame-pointer
 FLAGS	= -Wall -Wextra -Werror -I -std=c++98
 RM		= rm -rf
 

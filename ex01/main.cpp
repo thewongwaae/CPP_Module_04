@@ -96,5 +96,6 @@ int main()
 	std::cout << "\033[34mDeconstructing b\033[0m" << std::endl;
 	delete(b);
 
+	system("leaks Animals");
 	return (0);
 }
