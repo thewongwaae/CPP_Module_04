@@ -90,16 +90,19 @@ int main()
 	a->getIdeas();
 	std::cout << std::endl;
 
-	std::cout << "\033[34mDeconstructing a\033[0m" << std::endl;
-	delete(a);
-	std::cout << std::endl;
-
+	a->setIdea(5, "Random idea");
 	std::cout << "\033[34mTesting b\033[0m" << std::endl;
 	std::cout << "The " << b->getType() << " b has the following ideas: " << std::endl;
 	b->getIdeas();
 	std::cout << std::endl;
 
+	a->getIdeas();
+	std::cout << std::endl;
+	b->getIdeas();
+	std::cout << std::endl;
 	std::cout << "\033[34mDeconstructing b\033[0m" << std::endl;
+	delete(a);
+	std::cout << "\033[34mDeconstructing a\033[0m" << std::endl;
 	delete(b);
 
 

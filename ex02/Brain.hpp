@@ -15,6 +15,7 @@ class Brain {
 		Brain &operator=( const Brain &assign );
 
 		std::string	getIdea( int i ) const;
+		std::string *getIdeaAddr( int i );
 		void		setIdea( int i, std::string idea );
 };
 
